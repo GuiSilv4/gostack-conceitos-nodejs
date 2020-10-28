@@ -55,7 +55,7 @@ app.put("/repositories/:id", (request, response) => {
     id,
     title: title ? title : repositories[repositoryIndex].title,
     url: url ? url : repositories[repositoryIndex].url,
-    techs: updateTechs(techs, repositories[repositoryIndex].techs),
+    techs: techs ? techs : repositories[repositoryIndex].techs,//updateTechs(techs, repositories[repositoryIndex].techs),
     likes: repositories[repositoryIndex].likes
   };
 
